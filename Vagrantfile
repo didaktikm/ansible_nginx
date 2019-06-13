@@ -3,13 +3,13 @@
 home = ENV['HOME']
 
 MACHINES = {
-  :ansible => {
-        :box_name => "centos/7",
-        :ip_addr => '192.168.11.150',
-  },
   :web => {
         :box_name => "centos/7",
         :ip_addr => '192.168.11.151',
+  },
+  :ansible => {
+        :box_name => "centos/7",
+        :ip_addr => '192.168.11.150',
   }
 }
 
@@ -49,10 +49,16 @@ Vagrant.configure("2") do |config|
           yum install epel-release -y
           yum install ansible vim -y
           cp /vagrant/id_rsa /home/vagrant/.ssh/
+          cp /vagrant/id_rsa /root/.ssh/
           chown vagrant:vagrant /home/vagrant/.ssh/id_rsa 
+          chown root:root /root/.ssh/id_rsa
           chmod 0600 /home/vagrant/.ssh/id_rsa
+          chmod 0600 /root/.ssh/id_rsa
           echo "192.168.11.151  web" >> /etc/hosts
           echo "192.168.11.151" >> /etc/ansible/hosts
+          sed -i '71 s/#//' /etc/ansible/ansible.cfg
+          ansible-galaxy install didaktikm.ansible_nginx --force
+          ansible-playbook ~/.ansible/roles/didaktikm.ansible_nginx/playbook.yml
           # Create project structure
           mkdir ~/ansible
           SHELL
