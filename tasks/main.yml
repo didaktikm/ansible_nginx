@@ -26,14 +26,14 @@
   template:
     src: templates/nginx.conf.j2
     dest: /etc/nginx/nginx.conf
-    tags:
+  tags:
       - nginx-configuration
 
 - name: Add hostmane in index.html
   template:
     src: templates/index.html.j2
     dest: /usr/share/nginx/html/index.html
-    notify:
+  notify:
       - reload nginx
-    tags:
+  tags:
       - nginx-configuration
