@@ -1,2 +1,3 @@
 ---
-# vars file for nginx
+hostname: web.otus.local
+nginx_listen_port: 8080
