@@ -1,7 +1,6 @@
 ---
 - hosts: all
-  gather_facts: no
-  remote_user: vagrant
+  gather_facts: no  
   become: yes
   roles:
     - didaktikm.ansible_nginx
