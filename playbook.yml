@@ -2,4 +2,4 @@
 - hosts: all
   gather_facts: no
   roles:
-    - ansible_nginx
+    - didaktikm.ansible_nginx
