@@ -52,6 +52,7 @@ Vagrant.configure("2") do |config|
           chown vagrant:vagrant /home/vagrant/.ssh/id_rsa 
           chmod 0600 /home/vagrant/.ssh/id_rsa
           echo "192.168.11.151  web" >> /etc/hosts
+          echo "192.168.11.151" >> /etc/ansible/hosts
           # Create project structure
           mkdir ~/ansible
           SHELL
