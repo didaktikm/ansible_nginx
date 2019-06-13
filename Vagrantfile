@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
           echo "192.168.11.151  web" >> /etc/hosts
           echo "192.168.11.151" >> /etc/ansible/hosts
           sed -i '71 s/#//' /etc/ansible/ansible.cfg
-          ansible-galaxy install didaktikm.ansible_nginx --force
+          ansible-galaxy install didaktikm.ansible_nginx
           ansible-playbook ~/.ansible/roles/didaktikm.ansible_nginx/playbook.yml
           # Create project structure
           mkdir ~/ansible
