@@ -1,4 +1,0 @@
----
-hostname: web.otus.local
-nginx_listen_port: 8080
-ansible_distribution_major_version: 7
