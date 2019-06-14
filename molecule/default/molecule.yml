@@ -8,6 +8,8 @@ lint:
 platforms:
   - name: instance
     image: centos:7
+    command: /sbin/init
+    privileged: True
 provisioner:
   name: ansible
   lint:
