@@ -1,5 +1,3 @@
-
-[![Coverage Status](https://coveralls.io/repos/github/didaktikm/ansible_nginx/badge.svg?branch=master)](https://coveralls.io/github/didaktikm/ansible_nginx?branch=master)
 ## Автоматизация администрирования. Ansible.
 
 Подготовить стенд на Vagrant как минимум с одним сервером. На этом сервере используя Ansible необходимо развернуть nginx со следующими условиями:
