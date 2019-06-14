@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/didaktikm/ansible_nginx.svg?branch=master)](https://travis-ci.org/didaktikm/ansible_nginx)
+
 ![Ansible Role](https://img.shields.io/ansible/role/41256.svg?style=for-the-badge)
 ## Автоматизация администрирования. Ansible.
 
