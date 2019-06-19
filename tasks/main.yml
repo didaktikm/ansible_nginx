@@ -27,7 +27,7 @@
     dest: /etc/nginx/nginx.conf
   tags:
     - nginx-configuration
-  notify: 
+  notify:
     - restart nginx
 
 - name: Add hostname in index.html
