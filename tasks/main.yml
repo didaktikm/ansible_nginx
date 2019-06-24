@@ -16,24 +16,25 @@
   tags:
     - nginx
 
-- name: Start nginx
+- name: Enable nginx
   systemd:
     name: nginx
-    state: started
     enabled: yes
 
 - name: NGINX | Create NGINX config file from template
   template:
     src: templates/nginx.conf.j2
     dest: /etc/nginx/nginx.conf
-    tags:
-      - nginx-configuration
+  tags:
+    - nginx-configuration
+  notify:
+    - restart nginx
 
-- name: Add hostmane in index.html
+- name: Add hostname in index.html
   template:
     src: templates/index.html.j2
     dest: /usr/share/nginx/html/index.html
-    notify:
-      - reload nginx
-    tags:
-      - nginx-configuration
+  tags:
+    - nginx-configuration
+  notify:
+    - restart nginx

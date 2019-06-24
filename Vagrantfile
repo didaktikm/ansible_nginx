@@ -56,9 +56,12 @@ Vagrant.configure("2") do |config|
           chmod 0600 /root/.ssh/id_rsa
           echo "192.168.11.151  web" >> /etc/hosts
           echo "192.168.11.151" >> /etc/ansible/hosts
+<<<<<<< HEAD
           sed -i '71 s/#//' /etc/ansible/ansible.cfg
           ansible-galaxy install didaktikm.ansible_nginx --force
           ansible-playbook ~/.ansible/roles/didaktikm.ansible_nginx/playbook.yml
+=======
+>>>>>>> 22bf09285ec90f763d61cd205346cf1922c8904b
           # Create project structure
           mkdir ~/ansible
           SHELL
